@@ -18,6 +18,7 @@
 
     <modules>
         <module>server-zyjk-eureka-client</module>
+        <module>server-zyjk-eureka-server</module>
     </modules>
 
 </project>

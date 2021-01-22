@@ -22,6 +22,7 @@
 
     <modules>
         <module>server-zyjk</module>
+        <module>server-zyjk-eureka</module>
     </modules>
 
 </project>
