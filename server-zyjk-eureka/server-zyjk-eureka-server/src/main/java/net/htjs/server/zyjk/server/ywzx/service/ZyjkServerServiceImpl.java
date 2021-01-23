@@ -1,6 +1,7 @@
 package net.htjs.server.zyjk.server.ywzx.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,8 +14,11 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ZyjkServerServiceImpl implements IZyjkServerService {
 
+    @Value("${server.port}")
+    private String port;
+
     @Override
     public String from(String name) {
-        return "from zyjkServer server--->>>,"+name+",ok,success!";
+        return "from zyjkServer server:" + port + "--->>>," + name + ",ok,success!";
     }
 }
