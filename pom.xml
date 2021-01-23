@@ -23,6 +23,7 @@
     <modules>
         <module>server-zyjk</module>
         <module>server-zyjk-eureka</module>
+        <module>server-seeyon-eureka</module>
     </modules>
 
 </project>
