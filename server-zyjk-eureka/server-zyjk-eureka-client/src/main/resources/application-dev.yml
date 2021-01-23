@@ -1,4 +1,4 @@
 zyjk:
   # 致远接口服务-服务端地址
-  serverUrl: http://localhost:8721/
+  serverUrl: http://zyjk-server/
 
