@@ -17,8 +17,8 @@
     <description>springboot admin</description>
 
     <properties>
-        <spring-boot-dependencies.version>2.3.0.RELEASE</spring-boot-dependencies.version>
-        <spring-boot-admin-starter-server.version>2.3.0</spring-boot-admin-starter-server.version>
+        <spring-boot-dependencies.version>2.2.0.RELEASE</spring-boot-dependencies.version>
+        <spring-boot-admin-starter-server.version>2.2.0</spring-boot-admin-starter-server.version>
     </properties>
 
 
