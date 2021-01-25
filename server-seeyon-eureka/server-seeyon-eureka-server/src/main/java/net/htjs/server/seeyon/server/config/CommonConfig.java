@@ -1,6 +1,6 @@
 package net.htjs.server.seeyon.server.config;
 
-import net.htjs.server.zyjk.server.config.beans.TerminateBean;
+import net.htjs.server.seeyon.server.config.beans.TerminateBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

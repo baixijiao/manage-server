@@ -24,6 +24,7 @@
         <module>server-zyjk</module>
         <module>server-zyjk-eureka</module>
         <module>server-seeyon-eureka</module>
+        <module>server-config-eureka</module>
     </modules>
 
 </project>
