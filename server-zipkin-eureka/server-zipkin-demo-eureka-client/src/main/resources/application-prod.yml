@@ -1,0 +1,3 @@
+demo:
+  # Demo接口服务-服务端地址
+  serverUrl: http://demo-server/
