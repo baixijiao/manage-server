@@ -1,0 +1,4 @@
+elasticsearch:
+  # 致远接口服务-服务端地址
+  serverUrl: http://elasticsearch-server/
+

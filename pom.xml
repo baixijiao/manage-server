@@ -26,6 +26,7 @@
         <module>server-seeyon-eureka</module>
         <module>server-config-eureka</module>
         <module>server-zipkin-eureka</module>
+        <module>server-elasticsearch-eureka</module>
     </modules>
 
 </project>
