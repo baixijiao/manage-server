@@ -31,7 +31,7 @@ public class ElasticsearchClientServicImpl implements IElasticsearchClientServic
     @Value("${server.port}")
     private String port;
 
-    @Autowired(required = false)
+    @Autowired
     private ElasticsearchClientMapper elasticsearchClientMapper;
 
     @HystrixCommand(fallbackMethod = "fromError")
@@ -49,5 +49,10 @@ public class ElasticsearchClientServicImpl implements IElasticsearchClientServic
     @Override
     public Page<EsDemo> findByTitleLikeOrContentLike(String title, String content, Pageable pageable) {
         return elasticsearchClientMapper.findByTitleLikeOrContentLike(title, content, pageable);
+    }
+
+    @Override
+    public EsDemo insert(EsDemo esDemo) {
+        return elasticsearchClientMapper.save(esDemo);
     }
 }

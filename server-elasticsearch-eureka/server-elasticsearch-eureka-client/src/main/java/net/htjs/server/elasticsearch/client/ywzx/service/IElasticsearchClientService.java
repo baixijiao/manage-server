@@ -27,4 +27,11 @@ public interface IElasticsearchClientService {
      * @return
      */
     Page<EsDemo> findByTitleLikeOrContentLike(String title, String content, Pageable pageable);
+
+    /**
+     * 保存用户信息
+     * @param esDemo 用户信息
+     * @return
+     */
+    EsDemo insert(EsDemo esDemo);
 }

@@ -15,7 +15,7 @@ import java.io.Serializable;
  * @Description： EsDemo实体bean
  * @Modified By:
  */
-@Document(indexName = "esDemo_index",type="esDemo")
+@Document(indexName = "es_demo_index",type="es_demo")
 @Data
 @AllArgsConstructor
 @ApiModel(value = "EsDemo", description = "EsDemo申请实体bean")

@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,7 +43,7 @@ public class ElasticsearchClientController {
             @ApiResponse(code = 0, message = "{\"code\":0,\"title\":\"\",\"message\":\"SUCCESS\",\"data\":[]}")
     })
     @GetMapping("/list")
-    public List<EsDemo> list(@RequestParam(value="title",required=false,defaultValue="") String title,
+    public Page<EsDemo> list(@RequestParam(value="title",required=false,defaultValue="") String title,
                              @RequestParam(value="content",required=false,defaultValue="") String content,
                              @RequestParam(value="pageIndex",required=false,defaultValue="0") int pageIndex,
                              @RequestParam(value="pageSize",required=false,defaultValue="10") int pageSize) {
@@ -55,7 +52,20 @@ public class ElasticsearchClientController {
         Pageable pageable = PageRequest.of(pageIndex, pageSize);
         Page<EsDemo> page = elasticsearchClientService.findByTitleLikeOrContentLike(title, content, pageable);
 
-        return page.getContent();
+        return page;
+    }
+
+    @ApiOperation(value = "保存用户信息", notes = "保存用户信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "esDemo", value = "用户信息")
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "{\"code\":0,\"title\":\"\",\"message\":\"SUCCESS\",\"data\":[]}")
+    })
+    @PostMapping("insert")
+    public EsDemo insert(@RequestBody EsDemo esDemo) {
+        esDemo = elasticsearchClientService.insert(esDemo);
+        return esDemo;
     }
 
 }
