@@ -27,6 +27,7 @@
         <module>server-config-eureka</module>
         <module>server-zipkin-eureka</module>
         <module>server-elasticsearch-eureka</module>
+        <module>server-rabbitmq-eureka</module>
     </modules>
 
 </project>
