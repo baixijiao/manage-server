@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.htjs.server.dataSources.ywzx.dao.CommonDataSourcesMapper">
+
+    <select id="getDataByDbDefault">
+        SELECT id, ct_group, ct_group_desc
+        FROM onl_code_text
+        WHERE id = #{id}
+    </select>
+
+    <select id="getDataByDb1">
+        SELECT id, ct_group, ct_group_desc
+        FROM onl_code_text
+        WHERE id = #{id}
+    </select>
+
+    <select id="getDataByDb2">
+        SELECT HY_ID, HY_MC
+        FROM common_hy
+        WHERE HY_ID = #{id}
+    </select>
+</mapper>
