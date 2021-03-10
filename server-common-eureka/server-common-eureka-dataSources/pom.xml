@@ -59,6 +59,16 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatisPlus.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <!-- 开启二级缓存 -->
+        <dependency>
+            <groupId>org.mybatis.caches</groupId>
+            <artifactId>mybatis-ehcache</artifactId>
+            <version>1.2.0</version>
+        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
