@@ -28,6 +28,8 @@
         <module>server-zipkin-eureka</module>
         <module>server-elasticsearch-eureka</module>
         <module>server-rabbitmq-eureka</module>
+        <module>server-common-eureka</module>
+        <module>server-netty-eureka</module>
     </modules>
 
 </project>

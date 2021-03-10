@@ -1,0 +1,4 @@
+netty:
+  # netty服务-服务端地址
+  serverUrl: http://netty-server/
+
