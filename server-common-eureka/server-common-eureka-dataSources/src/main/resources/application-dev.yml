@@ -3,15 +3,15 @@ spring:
     druid:
       db1:
         driverClassName: com.mysql.jdbc.Driver
-        username: sjgl
-        password: sjgl
+        username: root
+        password: root
         # spring2.0此处为jdbc-url
-        url: jdbc:mysql://10.10.13.171:3306/zyjkfw?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        url: jdbc:mysql://1.14.155.181:3306/zyjkfw?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
         type: com.alibaba.druid.pool.DruidDataSource
       db2:
         driverClassName: com.mysql.jdbc.Driver
-        username: sjgl
-        password: sjgl
+        username: root
+        password: root
         # spring2.0此处为jdbc-url
-        url: jdbc:mysql://10.10.13.171:3306/sjgl?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        url: jdbc:mysql://1.14.155.181:3306/sjgl?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
         type: com.alibaba.druid.pool.DruidDataSource

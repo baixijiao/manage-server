@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
@@ -54,6 +55,8 @@ public class MyBatiesPlusConfiguration {
     @Bean("sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
+        // 解决xml和接口不在同一个包的问题
+        sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/**/*.xml"));
         sqlSessionFactory.setDataSource(multipleDataSource(db1(), db2()));
         //添加分页插件
         sqlSessionFactory.setPlugins(new Interceptor[]{paginationInterceptor()});

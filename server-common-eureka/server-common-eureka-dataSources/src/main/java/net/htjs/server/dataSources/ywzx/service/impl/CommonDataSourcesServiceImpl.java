@@ -3,7 +3,8 @@ package net.htjs.server.dataSources.ywzx.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import net.htjs.server.dataSources.config.datasource.DS;
 import net.htjs.server.dataSources.config.datasource.DataSourceEnum;
-import net.htjs.server.dataSources.ywzx.dao.CommonDataSourcesMapper;
+import net.htjs.server.dataSources.ywzx.dao.CommonDataSources2Mapper;
+import net.htjs.server.dataSources.ywzx.dao.CommonDataSourcesDefaultMapper;
 import net.htjs.server.dataSources.ywzx.service.ICommonDataSourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +28,10 @@ public class CommonDataSourcesServiceImpl implements ICommonDataSourcesService {
     private String port;
 
     @Autowired
-    private CommonDataSourcesMapper commonDataSourcesMapper;
+    private CommonDataSourcesDefaultMapper commonDataSourcesDefaultMapper;
+
+    @Autowired
+    private CommonDataSources2Mapper commonDataSources2Mapper;
 
     @Override
     public String from(String name) {
@@ -36,18 +40,18 @@ public class CommonDataSourcesServiceImpl implements ICommonDataSourcesService {
 
     @Override
     public Map<String, Object> getDataByDbDefault(String id) {
-        return commonDataSourcesMapper.getDataByDbDefault(id);
+        return commonDataSourcesDefaultMapper.getDataByDbDefault(id);
     }
 
     @Override
     @DS(DataSourceEnum.DB1)
     public Map<String, Object> getDataByDb1(String id) {
-        return commonDataSourcesMapper.getDataByDb1(id);
+        return commonDataSourcesDefaultMapper.getDataByDb1(id);
     }
 
     @Override
     @DS(DataSourceEnum.DB2)
     public Map<String, Object> getDataByDb2(String id) {
-        return commonDataSourcesMapper.getDataByDb2(id);
+        return commonDataSources2Mapper.getDataByDb2(id);
     }
 }
