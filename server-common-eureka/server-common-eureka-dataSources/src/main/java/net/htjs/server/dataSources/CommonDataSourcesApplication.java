@@ -12,7 +12,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @MapperScan("net.htjs.server.dataSources.*.dao")
-@EnableCaching
 @ServletComponentScan(basePackages ="net.htjs.server.dataSources.config.druid")
 public class CommonDataSourcesApplication {
 

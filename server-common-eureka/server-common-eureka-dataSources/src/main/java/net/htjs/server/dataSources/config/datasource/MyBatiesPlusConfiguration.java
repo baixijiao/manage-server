@@ -52,12 +52,22 @@ public class MyBatiesPlusConfiguration {
         return multipleDataSource;
     }
 
+    static final String MAPPER_LOCATION = "classpath:/mapper/**/*.xml";
+    static final String CONFIG_LOCATION = "classpath:/mybatis-config.xml";
+
     @Bean("sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
-        // 解决xml和接口不在同一个包的问题
-        sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/**/*.xml"));
+        // SqlSessionFactory设置数据源信息
         sqlSessionFactory.setDataSource(multipleDataSource(db1(), db2()));
+
+        // SqlSessionFactory设置需要被扫描到的Mapper所在路径(全限定包名)-（解决xml和接口不在同一个包的问题）
+        sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATION));
+        // SqlSessionFactory设置mybatis的配置信息
+        sqlSessionFactory.setConfigLocation(new PathMatchingResourcePatternResolver().getResource(CONFIG_LOCATION));
+        // SqlSessionFactory设置返回结果为map集合时，字段名由下划线转换为驼峰
+        sqlSessionFactory.setObjectWrapperFactory(new MapWrapperFactory());
+
         //添加分页插件
         sqlSessionFactory.setPlugins(new Interceptor[]{paginationInterceptor()});
         return sqlSessionFactory.getObject();
