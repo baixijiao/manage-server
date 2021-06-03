@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    druid:
+      db1:
+        driverClassName: com.mysql.jdbc.Driver
+        username: sjgl
+        password: sjgl
+        # spring2.0此处为jdbc-url
+        jdbc-url: jdbc:mysql://10.10.13.171:3306/zyjkfw?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        type: com.alibaba.druid.pool.DruidDataSource
+      db2:
+        driverClassName: com.mysql.jdbc.Driver
+        username: sjgl
+        password: sjgl
+        # spring2.0此处为jdbc-url
+        jdbc-url: jdbc:mysql://10.10.13.171:3306/sjgl?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        type: com.alibaba.druid.pool.DruidDataSource

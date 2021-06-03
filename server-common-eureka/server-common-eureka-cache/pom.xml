@@ -10,15 +10,14 @@
     </parent>
 
     <groupId>net.htjs.server.common</groupId>
-    <artifactId>server-common-eureka</artifactId>
+    <artifactId>server-common-eureka-cache</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>server-common-eureka</name>
-    <description>server-common-eureka</description>
+    <name>server-common-eureka-cache</name>
+    <description>server-common-eureka-cache</description>
 
     <modules>
-        <module>server-common-eureka-dataSources</module>
-        <module>server-common-eureka-cache</module>
+        <module>server-common-eureka-cache-springboot</module>
     </modules>
 
 </project>
