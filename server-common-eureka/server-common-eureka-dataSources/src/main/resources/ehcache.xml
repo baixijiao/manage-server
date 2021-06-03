@@ -33,8 +33,8 @@
     <defaultCache
             eternal="false"
             maxElementsInMemory="1000"
-            overflowToDisk="false"
-            diskPersistent="false"
+            overflowToDisk="true"
+            diskPersistent="true"
             timeToIdleSeconds="0"
             timeToLiveSeconds="600"
             memoryStoreEvictionPolicy="LRU" />

@@ -3,13 +3,13 @@
 <mapper namespace="net.htjs.server.dataSources.ywzx.dao.CommonDataSourcesDefaultMapper">
 
     <!--开启二级缓存-->
-    <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache">
         <property name="timeToIdleSeconds" value="3600"/>
         <property name="timeToLiveSeconds" value="3600"/>
         <property name="maxEntriesLocalHeap" value="1000"/>
         <property name="maxEntriesLocalDisk" value="10000000"/>
         <property name="memoryStoreEvictionPolicy" value="LRU"/>
-    </cache>-->
+    </cache>
 
 
     <select id="getDataByDbDefault" resultType="hashmap">
