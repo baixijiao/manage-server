@@ -22,6 +22,7 @@
         <module>server-common-eureka-dataSources</module>
         <module>server-common-eureka-cache</module>
         <module>server-common-eureka-mdc</module>
+        <module>server-common-eureka-designer</module>
     </modules>
 
 </project>
