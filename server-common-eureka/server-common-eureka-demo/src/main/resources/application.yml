@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: common-demo
+  profiles:
+    active: dev
+
+server:
+  # common模块端口从20000开始
+  port: 20000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:eureka@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    status-page-url: http://${spring.cloud.client.ip-address}:${server.port}/doc.html
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+

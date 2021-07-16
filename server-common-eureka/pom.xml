@@ -17,6 +17,8 @@
     <description>server-common-eureka</description>
 
     <modules>
+        <!--common项目的demo项目-->
+        <module>server-common-eureka-demo</module>
         <module>server-common-eureka-dataSources</module>
         <module>server-common-eureka-cache</module>
     </modules>
