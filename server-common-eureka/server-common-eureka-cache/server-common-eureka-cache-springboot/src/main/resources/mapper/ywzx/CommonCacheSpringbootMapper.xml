@@ -16,4 +16,14 @@
         FROM common_hy
         WHERE HY_ID = #{id}
     </select>
+
+    <update id="updateDataByDb2" parameterType="string">
+        UPDATE common_hy SET HY_MC = '789'
+        WHERE HY_ID = #{id}
+    </update>
+
+    <update id="delDataByDb2" parameterType="string">
+        DELETE FROM common_hy
+        WHERE HY_ID = #{id}
+    </update>
 </mapper>
