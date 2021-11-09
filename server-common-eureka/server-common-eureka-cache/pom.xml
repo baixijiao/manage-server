@@ -18,6 +18,7 @@
 
     <modules>
         <module>server-common-eureka-cache-springboot</module>
+        <module>server-common-eureka-redisCache-springboot</module>
     </modules>
 
 </project>
