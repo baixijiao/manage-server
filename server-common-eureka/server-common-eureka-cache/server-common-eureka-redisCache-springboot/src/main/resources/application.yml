@@ -1,6 +1,6 @@
 spring:
   application:
-    name: common-demo
+    name: redisCache-demo
   profiles:
     active: dev
   datasource:
