@@ -3,6 +3,7 @@ package net.bai.server.rediscache.springboot.ywzx.controller;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import net.bai.server.rediscache.springboot.ywzx.service.ICommonDemoService;
+import net.bai.server.rediscache.springboot.ywzx.service.cache.IRedisCacheSpringbootService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,8 @@ public class CommonDemoController {
 
     @Autowired
     ICommonDemoService commonDemoService;
+    @Autowired
+    IRedisCacheSpringbootService redisCacheSpringbootService;
 
     @GetMapping("/from")
     public String from(@RequestParam(required = false,defaultValue = "commonDemo") String name){
@@ -39,5 +42,19 @@ public class CommonDemoController {
     public Map<String, Object> getData(@PathVariable String id){
         return commonDemoService.getData(id);
     }
+
+
+    @GetMapping("/getRedisCacheData/{id}")
+    public Map<String, Object> getRedisCacheData(@PathVariable String id){
+        return redisCacheSpringbootService.getRedisCacheData(id);
+    }
+
+    @GetMapping("/updateRedisCacheData/{id}")
+    public Map<String, Object> updateRedisCacheData(@PathVariable String id){
+        return redisCacheSpringbootService.updateRedisCacheData(id);
+    }
+
+
+
 
 }

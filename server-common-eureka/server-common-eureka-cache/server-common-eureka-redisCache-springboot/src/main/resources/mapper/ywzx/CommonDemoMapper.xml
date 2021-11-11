@@ -7,5 +7,16 @@
         FROM common_hy
         WHERE HY_ID = #{id}
     </select>
+
+    <select id="getRedisCacheData" resultType="hashmap">
+        SELECT HY_ID, HY_MC
+        FROM common_hy
+        WHERE HY_ID = #{id}
+    </select>
+
+    <update id="updateRedisCacheData" parameterType="string">
+        UPDATE common_hy SET HY_MC = '789'
+        WHERE HY_ID = #{id}
+    </update>
 </mapper>
 

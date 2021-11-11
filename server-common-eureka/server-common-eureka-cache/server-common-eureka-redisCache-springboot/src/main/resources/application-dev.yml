@@ -4,3 +4,19 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: test
     username: test
+  redis: ###### redis 配置
+    host: 192.168.100.81  # ip地址
+    database: 1  # redis数据库  0-15
+    port: 6379  # 端口号
+    password: # 无密码不填
+    #    timeout: 30000s  # 连接超时时间 （默认1天）
+    timeout: 5000ms  # 连接超时时间 （默认1天）
+    sqlExpireTime: -1 #过期时间（单位s,-1为一直不过期）
+    resultExpireTime: -1 #过期时间（单位s,-1为一直不过期）
+    lettuce:
+      shutdown-timeout: 100ms # 关闭超时时间 默认 100ms
+      pool: # lettuce 连接池
+        max-active: 8 # 连接池最大连接数 默认 8（-1 ：表示没有限制）
+        max-wait: 60000ms # 连接池最大阻塞等待时间 默认-1ms （-1 :表示没有限制） 这里设置1分钟
+        max-idle: 8 # 最大空闲连接  默认 8
+        min-idle: 0 # 最小空闲连接  默认 0

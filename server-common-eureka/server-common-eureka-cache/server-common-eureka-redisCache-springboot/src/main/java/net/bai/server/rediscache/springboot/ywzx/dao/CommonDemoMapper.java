@@ -16,4 +16,18 @@ public interface CommonDemoMapper {
      * @return
      */
     Map<String, Object> getData(String id);
+
+    /**
+     * 查询数据并缓存
+     * @param id
+     * @return
+     */
+    Map<String, Object> getRedisCacheData(String id);
+
+    /**
+     * 更新数据并删除缓存
+     * @param id
+     * @return
+     */
+    Integer updateRedisCacheData(String id);
 }

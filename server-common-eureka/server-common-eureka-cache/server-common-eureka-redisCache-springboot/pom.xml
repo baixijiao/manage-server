@@ -17,7 +17,7 @@
     <description>server-common-eureka-redisCache-springboot</description>
 
     <properties>
-        <spring-boot-dependencies.version>2.2.0.RELEASE</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>2.3.2.RELEASE</spring-boot-dependencies.version>
         <spring-cloud-dependencies.version>Hoxton.RELEASE</spring-cloud-dependencies.version>
         <mybatisPlus.version>3.2.0</mybatisPlus.version>
         <druid.version>1.1.21</druid.version>
@@ -115,6 +115,16 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
+        </dependency>
+
+        <!-- 添加Redis缓存 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
 
     </dependencies>
