@@ -23,6 +23,7 @@
         <module>server-common-eureka-cache</module>
         <module>server-common-eureka-mdc</module>
         <module>server-common-eureka-designer</module>
+        <module>server-common-eureka-dataBackupRestore</module>
     </modules>
 
 </project>
